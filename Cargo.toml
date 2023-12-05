@@ -1,0 +1,30 @@
+[package]
+name = "woof-backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = { version = "1.0.75", features = ["backtrace"] }
+askama = { version = "0.12.1", features = ["with-axum"] }
+askama_axum = "0.4.0"
+axum = "0.7.1"
+clap = { version = "4.4.10", features = ["derive", "env"] }
+dotenv = "0.15.0"
+env_logger = "0.10.1"
+sqlx = { version = "0.7", features = ["runtime-tokio", "tls-native-tls", "postgres", "time", "json", "uuid"] }
+tokio = { version = "1.34.0", features = ["full"] }
+tower = { version = "0.4.13", features = ["util"] }
+tower-http = { version = "0.5.0", features = ["fs"] }
+log = { version = "0.4.20", features = [] }
+axum-login = "0.10.2"
+async-trait = "0.1.74"
+serde = { version = "1.0.193", features = ["derive"] }
+redact = { version = "0.1.7", features = ["serde"] }
+webauthn-rs = { git = "https://github.com/kanidm/webauthn-rs", version = "0.5.0-dev", features = ["danger-allow-state-serialisation"] }
+thiserror = "1.0.50"
+serde_json = { version = "1.0.108", features = ["raw_value"] }
+tower-sessions = "0.7.0"
+axum-macros = "0.4.0"
+uuid = { version = "1.6.1", features = ["v4"] }

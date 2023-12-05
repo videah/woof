@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="card fade-in">
+        {% match user %}
+        {% when Some with (user) %}
+            <h1>Hello {{ user.username }}!</h1>
+        {% when None %}
+
+        {% endmatch %}
+        {% include "components/upload_tile.html" %}
+    </div>
+{% endblock %}

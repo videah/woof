@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="modulepreload" href="/static/woof_passkey_login.js" as="script" type="text/javascript">
+    <link rel="preload" href="/static/woof_passkey_login_bg.wasm" as="fetch" type="application/wasm" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+    <div id="auth-card" class="card fade-in">
+        <section id="app"></section>
+    </div>
+
+    <script type="module">
+        import init from '/static/woof_passkey_login.js';
+        init('/static/woof_passkey_login_bg.wasm');
+    </script>
+{% endblock %}

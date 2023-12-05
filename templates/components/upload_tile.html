@@ -1,0 +1,23 @@
+<form hx-encoding="multipart/form-data" hx-post="/upload">
+    <label id="file-upload-tile" for="file-holder" class="flex flex-col items-center justify-center dashed h-96 w-96 p-8"
+           _="
+                on dragover or dragenter or drop halt the event
+                then add .hidden to .hide-on-drag
+                then add .file-hover to me
+                then set #drop-file-text's textContent to 'Release to upload'
+
+                on dragleave or drop remove .file-hover from me
+                then set #drop-file-text's textContent to 'Drop files here'
+                then remove .hidden from .hide-on-drag
+
+                on drop put it into #file-holder
+            ">
+        {% include "svg/upload_icon.html" %}
+        <span id="drop-file-text" class="text-lg font-semibold">Drop files here</span>
+        <span class="my-2 text-md hide-on-drag">or</span>
+        <button class="button-purple hide-on-drag">
+            Choose a file
+        </button>
+    </label>
+    <input id="file-holder" type="file" class="hidden">
+</form>

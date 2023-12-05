@@ -1,0 +1,1 @@
+SELECT * FROM users WHERE lower(username) = lower($1)
