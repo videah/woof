@@ -4,6 +4,7 @@ mod db;
 mod frontend;
 mod http;
 mod templates;
+mod tus;
 
 use anyhow::Context;
 use clap::Parser;
