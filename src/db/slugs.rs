@@ -78,3 +78,38 @@ pub struct Slug {
     pub enabled: Option<OffsetDateTime>,
     pub created_at: OffsetDateTime,
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn slug_string_is_valid_returns_true_for_valid_slug() {
+        assert!(SlugString::is_valid("this-is-a-slug"));
+    }
+
+    #[test]
+    fn slug_string_is_valid_returns_false_for_invalid_slug() {
+        assert!(!SlugString::is_valid("thisisaslug"));
+    }
+
+    #[test]
+    fn slug_string_is_valid_returns_false_for_empty_slug() {
+        assert!(!SlugString::is_valid(""));
+    }
+
+    #[test]
+    fn slug_string_is_valid_returns_false_for_slug_with_extra_dashes() {
+        assert!(!SlugString::is_valid("this--is-a-slug"));
+    }
+
+    #[test]
+    fn slug_string_is_valid_returns_false_for_slug_with_less_than_four_words() {
+        assert!(!SlugString::is_valid("this-is-slug"));
+    }
+
+    #[test]
+    fn slug_string_is_valid_returns_false_for_slug_with_more_than_four_words() {
+        assert!(!SlugString::is_valid("this-is-a-very-long-slug"));
+    }
+}
