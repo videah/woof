@@ -34,7 +34,7 @@ CREATE TABLE slugs (
     file_id INTEGER REFERENCES files(id) ON DELETE CASCADE, -- ID of the file associated with the slug.
     paste_id INTEGER REFERENCES pastes(id) ON DELETE CASCADE , -- ID of the paste associated with the slug.
     slug TEXT NOT NULL UNIQUE, -- Unique slug for accessing the slug in URLs (example: honest-turbo-tailor-gregory)
-    enabled TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP, -- If the slug is enabled or not and when it was last enabled.
+    enabled TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP, -- If the slug is enabled or not and when it was last enabled.
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP -- When the slug was created.
 );
 
