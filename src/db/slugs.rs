@@ -1,3 +1,4 @@
+use cool_id_generator::get_id;
 use serde::{
     Deserialize,
     Serialize,
@@ -20,6 +21,9 @@ use thiserror::Error;
 ///
 /// This type implements [`Decode`] for decoding values from the database, strictly checking and
 /// enforcing the format.
+///
+/// This is meant to be used with [`get_id`] using [`cool_id_generator::Size::Medium`], which
+/// generates a random slug with 1 billion possible combinations.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SlugString(String);
 
