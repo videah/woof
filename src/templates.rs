@@ -13,5 +13,23 @@ pub struct IndexTemplate {
 pub struct AuthTemplate;
 
 #[derive(Template)]
+#[template(path = "new_paste.html")]
+pub struct PasteCreationTemplate;
+
+#[derive(Template)]
+#[template(path = "components/paste_card.html")]
+pub struct PasteCard {
+    pub content: String,
+}
+
+#[derive(Template)]
 #[template(path = "paste.html")]
-pub struct PasteTemplate;
+pub struct PasteTemplate {
+    pub paste_card: PasteCard,
+}
+
+#[derive(Template)]
+#[template(path = "error.html")]
+pub struct ErrorTemplate {
+    pub error: String,
+}

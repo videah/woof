@@ -31,3 +31,4 @@ uuid = { version = "1.6.1", features = ["v4"] }
 headers = "0.4.0"
 axum-extra = { version = "0.9.0", features = ["typed-header"] }
 http = { version = "1.0.0", features = [] }
+cool-id-generator = "1.0.1"

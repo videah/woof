@@ -1,0 +1,1 @@
+SELECT * FROM pastes WHERE id = $1

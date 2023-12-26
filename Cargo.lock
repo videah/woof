@@ -533,6 +533,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "cool-id-generator"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "946cf88fb171128bc025588b9b408982814ace1a1fb31ffb9bfa63d955f0b43d"
+dependencies = [
+ "rand",
+]
+
+[[package]]
 name = "core-foundation"
 version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2870,6 +2879,7 @@ dependencies = [
  "axum-login",
  "axum-macros",
  "clap",
+ "cool-id-generator",
  "dotenv",
  "env_logger",
  "headers",

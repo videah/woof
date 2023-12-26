@@ -1,0 +1,1 @@
+SELECT * FROM slugs WHERE slug = $1

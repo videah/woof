@@ -2,14 +2,6 @@
 
 {% block content %}
 
-<div class="card">
-    <form hx-post="/api/pastes" hx-ext="json-enc">
-        <div class="mb-4">
-            <label for="content" class="block text-sm font-medium text-gray-700">Paste your code</label>
-            <textarea id="content" name="content" rows="4" class="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" placeholder="Paste your code here..."></textarea>
-        </div>
-        <button class="w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Submit</button>
-    </form>
-</div>
+{{ paste_card|safe }}
 
 {% endblock %}
